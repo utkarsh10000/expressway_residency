@@ -241,8 +241,8 @@ function Navbar({ onCTAClick }) {
       {/* Mobile menu */}
       {menuOpen && (
         <div style={{ position: 'fixed', top: 64, left: 0, right: 0, zIndex: 49, background: '#fff', borderBottom: '2px solid #1a4a3a', padding: '16px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-          {['Overview', 'Amenities', 'Pricing', 'Location'].map(item => (
-            <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)} style={{ color: '#1a4a3a', textDecoration: 'none', fontWeight: 600, fontSize: 15, padding: '8px 0', borderBottom: '1px solid #f3f4f6' }}>{item}</a>
+          {['Overview', 'Amenities', 'Pricing', 'Location'].map((item, i) => (
+            <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)} style={{ color: '#1a4a3a', textDecoration: 'none', fontWeight: 600, fontSize: 15, padding: '8px 0', borderBottom: '1px solid #f3f4f6', marginTop: i === 0 ? 8 : 0 }}>{item}</a>
           ))}
           <button onClick={() => { onCTAClick('Apply Now'); setMenuOpen(false) }} style={{ background: '#1a4a3a', color: '#fff', border: 'none', borderRadius: 6, padding: '12px', fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>Apply Now</button>
           <a href="tel:+919911807193" style={{ background: '#f59e0b', color: '#fff', borderRadius: 6, padding: '12px', fontWeight: 700, fontSize: 14, textDecoration: 'none', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}><IconPhone size={16} color="#fff" /> Call Us Now</a>
@@ -415,7 +415,7 @@ export default function ExpresswayResidencyPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!modalOpen) openModal('Book a Free Site Visit')
-    }, 20000)
+    }, 30000)
     return () => clearInterval(interval)
   }, [modalOpen])
 
@@ -451,7 +451,7 @@ export default function ExpresswayResidencyPage() {
       <LeadModal isOpen={modalOpen} onClose={() => setModalOpen(false)} triggerText={modalTitle} />
 
       {/* ── HERO ── */}
-      <section id="overview" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 64 }}>
+      <section id="overview" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 140 }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://i.postimg.cc/bwn1qkPh/Screenshot-2026-06-04-151727.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.3) 100%)' }} />
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 16px', position: 'relative', zIndex: 10, width: '100%' }}>
