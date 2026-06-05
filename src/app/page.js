@@ -55,6 +55,12 @@ const responsiveCSS = `
     .nav-links .call-btn span { display: none; }
   }
 
+  .proximity-mobile { display: none; }
+  @media (max-width: 900px) {
+    .proximity-desktop { display: none; }
+    .proximity-mobile { display: table; }
+  }
+
   @keyframes spin { to { transform: rotate(360deg); } }
 `
 
@@ -175,7 +181,7 @@ const proximityList = [
 ]
 
 const faqs = [
-  { q: 'Where is Expressway Residency located?', a: 'Expressway Residency is located on Delhi–Meerut Expressway (NH-24), near Hawa Hawai Restaurant, Didwari, Ghaziabad, Uttar Pradesh 201206 — directly on the 16-lane expressway with seamless access to Delhi, Noida, and Meerut.' },
+  { q: 'Where is Expressway Residency located?', a: 'Expressway Residency is located on Delhi–Meerut Expressway (NE-3), near Hawa Hawai Restaurant, Didwari, Ghaziabad, Uttar Pradesh 201206 — directly on the 16-lane expressway with seamless access to Delhi, Noida, and Meerut.' },
   { q: 'What is the size and price of villa and plots in Expressway Residency?', a: 'Expressway Residency offers plots in sizes of 100 Sq. Yd., 150 Sq. Yd., 200 Sq. Yd., and 300 Sq. Yd. The pre-launch price starts at ₹75,000 per square yard. Contact our sales team for a detailed price list and payment plan.' },
   { q: 'What facilities does Expressway Residency offer?', a: 'Expressway Residency offers 50+ premium amenities including a Club House, Swimming Pool, Gymnasium, Landscaped Parks, CCTV Surveillance, 24×7 Security, Kids Play Area, Food Court, Jogging Track, Face Recognition Entry, and much more.' },
   { q: 'Is the project RERA registered?', a: 'RERA registration for Expressway Residency is currently under process. Our team will keep all investors updated with the RERA number once approved. All documentation and due diligence is transparent and available for review.' },
@@ -239,7 +245,7 @@ function Navbar({ onCTAClick }) {
             <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)} style={{ color: '#1a4a3a', textDecoration: 'none', fontWeight: 600, fontSize: 15, padding: '8px 0', borderBottom: '1px solid #f3f4f6' }}>{item}</a>
           ))}
           <button onClick={() => { onCTAClick('Apply Now'); setMenuOpen(false) }} style={{ background: '#1a4a3a', color: '#fff', border: 'none', borderRadius: 6, padding: '12px', fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>Apply Now</button>
-          <a href="tel:+919911807193" style={{ background: '#f59e0b', color: '#fff', borderRadius: 6, padding: '12px', fontWeight: 700, fontSize: 14, textDecoration: 'none', textAlign: 'center' }}>📞 Call Us Now</a>
+          <a href="tel:+919911807193" style={{ background: '#f59e0b', color: '#fff', borderRadius: 6, padding: '12px', fontWeight: 700, fontSize: 14, textDecoration: 'none', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}><IconPhone size={16} color="#fff" /> Call Us Now</a>
         </div>
       )}
       <style>{`
@@ -451,12 +457,12 @@ export default function ExpresswayResidencyPage() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 16px', position: 'relative', zIndex: 10, width: '100%' }}>
           <div className="hero-grid">
             <div style={{ maxWidth: 580, flex: '1 1 auto' }}>
-              <p style={{ color: '#fbbf24', fontSize: 11, letterSpacing: 3, fontWeight: 700, textTransform: 'uppercase', marginBottom: 12 }}>Premium Residential Township on NH-24</p>
+              <p style={{ color: '#fbbf24', fontSize: 11, letterSpacing: 3, fontWeight: 700, textTransform: 'uppercase', marginBottom: 12 }}>Premium Residential Township on NE-3</p>
               <h1 style={{ color: '#fff', fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(2.2rem,5vw,4.2rem)', fontWeight: 700, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 16 }}>
-                Expressway<br /><em style={{ color: '#fbbf24', fontStyle: 'italic' }}>Residency</em>
+                <span style={{ whiteSpace: 'nowrap' }}>Expressway <em style={{ color: '#fbbf24', fontStyle: 'italic' }}>Residency</em></span>
               </h1>
               <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: 'clamp(13px,1.5vw,15px)', lineHeight: 1.7, marginBottom: 8 }}>
-                75 Acres USA + Dubai inspired premium living mega township on the 16-lane Delhi–Meerut Expressway (NH-24), Ghaziabad.
+                75 Acres USA + Dubai inspired premium living mega township on the 16-lane Delhi–Meerut Expressway (NE-3), Ghaziabad.
               </p>
               <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, marginBottom: 28 }}>Ready-to-Move · Residential Plots (100–300 Sq. Yd.) · Starting ₹75,000/Sq. Yd.</p>
               <div className="hero-btns" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -486,7 +492,7 @@ export default function ExpresswayResidencyPage() {
                 <p style={{ fontSize: 11, fontWeight: 800, letterSpacing: 3, textTransform: 'uppercase', color: '#1a4a3a', marginBottom: 8 }}>ABOUT THE <span style={{ color: '#374151' }}>PROJECT</span></p>
                 <h3 style={{ fontSize: 'clamp(15px,2vw,18px)', fontWeight: 700, color: '#1e2a22', marginBottom: 12 }}>Expressway Residency — Exclusive Villa Society in Ghaziabad</h3>
                 <p style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.8, marginBottom: 16 }}>
-                  Experience a perfect blend of comfort, connectivity, and contemporary lifestyle at Expressway Residency, ideally located on the rapidly developing NH-24 Delhi–Meerut Expressway, Ghaziabad. Designed for modern families, this residential enclave offers a serene living environment with seamless access to major urban hubs. Just 1 hour from Delhi NCR, this thoughtfully planned township blends urban comfort with green living.
+                  Experience a perfect blend of comfort, connectivity, and contemporary lifestyle at Expressway Residency, ideally located on the rapidly developing NE-3 Delhi–Meerut Expressway, Ghaziabad. Designed for modern families, this residential enclave offers a serene living environment with seamless access to major urban hubs. Just 1 hour from Delhi NCR, this thoughtfully planned township blends urban comfort with green living.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {advantages.slice(0, 4).map(a => (
@@ -556,7 +562,8 @@ export default function ExpresswayResidencyPage() {
               <p style={{ fontSize: 13, color: '#4b5563', lineHeight: 1.7, marginBottom: 20 }}>
                 Expressway Residency is located near Honda North Gate, Ghaziabad — close to schools, hospitals, and key landmarks. Adjacent to the RRTS rapid rail system with Dhanchurpur Metro Rail station.
               </p>
-              <div className="proximity-cols">
+              {/* Desktop: 2-col layout */}
+              <div className="proximity-cols proximity-desktop">
                 {proximityList.map(({ place, distance }) => (
                   <div key={place} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #f3f4f6', breakInside: 'avoid' }}>
                     <span style={{ fontSize: 12, color: '#374151', fontWeight: 500 }}>{place}</span>
@@ -564,6 +571,23 @@ export default function ExpresswayResidencyPage() {
                   </div>
                 ))}
               </div>
+              {/* Mobile: table */}
+              <table className="proximity-mobile" style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+                <thead>
+                  <tr style={{ background: '#1a4a3a' }}>
+                    <th style={{ padding: '8px 12px', color: '#fff', fontWeight: 700, textAlign: 'left' }}>Location</th>
+                    <th style={{ padding: '8px 12px', color: '#fbbf24', fontWeight: 700, textAlign: 'right' }}>Distance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {proximityList.map(({ place, distance }, i) => (
+                    <tr key={place} style={{ background: i % 2 === 0 ? '#fff' : '#f9fafb' }}>
+                      <td style={{ padding: '8px 12px', color: '#374151', fontWeight: 500, borderBottom: '1px solid #f3f4f6' }}>{place}</td>
+                      <td style={{ padding: '8px 12px', color: '#1a4a3a', fontWeight: 700, textAlign: 'right', borderBottom: '1px solid #f3f4f6', whiteSpace: 'nowrap' }}>{distance}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -599,9 +623,9 @@ export default function ExpresswayResidencyPage() {
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 28, flexWrap: 'wrap' }}>
             {[
-              { size: '100 Sq.Yd.', type: 'Villa Plots' },
-              { size: '200 Sq.Yd.', type: 'Villa Plots' },
-              { size: '300 Sq.Yd.', type: 'Villa Plots' },
+              { size: '100 Sq.Yd.', type: 'Residencial Plots ' },
+              { size: '200 Sq.Yd.', type: 'Residencial Plots ' },
+              { size: '300 Sq.Yd.', type: 'Residencial Plots ' },
             ].map(({ size, type }) => (
               <div key={size} style={{ width: 300, borderRadius: 20, overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.35)', flexShrink: 0 }}>
                 {/* Top grey header */}
@@ -645,9 +669,70 @@ export default function ExpresswayResidencyPage() {
             <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 12 }}>Site Layout</h2>
             <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg,#1a4a3a,#f59e0b)', borderRadius: 2, margin: '0 auto' }} />
           </div>
-          <div style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', border: '1px solid #e5e7eb', boxShadow: '0 8px 40px rgba(0,0,0,0.1)', marginBottom: 24, maxWidth: 700, margin: '0 auto 24px' }}>
-            <img src="/assets/expressway-layout.webp" alt="Site Plan" style={{ width: '100%', display: 'block', height: 360, objectFit: 'cover' }} />
-          </div>
+          {/* Lightbox state handled inline */}
+          {(() => {
+            const [lightboxOpen, setLightboxOpen] = useState(false)
+            const [zoom, setZoom] = useState(1)
+            const [pos, setPos] = useState({ x: 0, y: 0 })
+            const [dragging, setDragging] = useState(false)
+            const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
+            const closeLightbox = () => { setLightboxOpen(false); setZoom(1); setPos({ x: 0, y: 0 }) }
+            const handleZoomIn = () => setZoom(z => Math.min(z + 0.5, 5))
+            const handleZoomOut = () => setZoom(z => { const next = Math.max(z - 0.5, 1); if (next === 1) setPos({ x: 0, y: 0 }); return next })
+            const handleWheel = (e) => { e.preventDefault(); const delta = e.deltaY > 0 ? -0.3 : 0.3; setZoom(z => { const next = Math.min(Math.max(z + delta, 1), 5); if (next === 1) setPos({ x: 0, y: 0 }); return next }) }
+            const handleMouseDown = (e) => { if (zoom > 1) { setDragging(true); setDragStart({ x: e.clientX - pos.x, y: e.clientY - pos.y }) } }
+            const handleMouseMove = (e) => { if (dragging) setPos({ x: e.clientX - dragStart.x, y: e.clientY - dragStart.y }) }
+            const handleMouseUp = () => setDragging(false)
+            return (
+              <>
+                <div
+                  onClick={() => setLightboxOpen(true)}
+                  style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', border: '1px solid #e5e7eb', boxShadow: '0 8px 40px rgba(0,0,0,0.1)', marginBottom: 24, maxWidth: 700, margin: '0 auto 24px', cursor: 'zoom-in' }}
+                >
+                  <img src="/assets/expressway-layout.webp" alt="Site Plan" style={{ width: '100%', display: 'block', height: 360, objectFit: 'contain', background: '#f8f4ed' }} />
+                  <div style={{ position: 'absolute', bottom: 12, right: 12, background: 'rgba(0,0,0,0.55)', color: '#fff', fontSize: 12, fontWeight: 600, padding: '6px 14px', borderRadius: 20, display: 'flex', alignItems: 'center', gap: 6, backdropFilter: 'blur(4px)' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    Click to enlarge
+                  </div>
+                </div>
+
+                {lightboxOpen && (
+                  <div
+                    onClick={(e) => { if (e.target === e.currentTarget) closeLightbox() }}
+                    style={{ position: 'fixed', inset: 0, zIndex: 100, background: 'rgba(0,0,0,0.92)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16 }}
+                    onWheel={handleWheel}
+                  >
+                    {/* Close button */}
+                    <button onClick={closeLightbox} style={{ position: 'absolute', top: 16, right: 16, width: 40, height: 40, borderRadius: '50%', background: 'rgba(255,255,255,0.15)', border: 'none', color: '#fff', fontSize: 22, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 101 }}>×</button>
+
+                    {/* Zoom controls */}
+                    <div style={{ position: 'absolute', bottom: 24, left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(0,0,0,0.6)', padding: '8px 20px', borderRadius: 30, zIndex: 101, backdropFilter: 'blur(8px)' }}>
+                      <button onClick={handleZoomOut} disabled={zoom <= 1} style={{ width: 34, height: 34, borderRadius: '50%', background: zoom <= 1 ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.2)', border: 'none', color: '#fff', fontSize: 20, cursor: zoom <= 1 ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>−</button>
+                      <span style={{ color: '#fff', fontSize: 13, fontWeight: 600, minWidth: 44, textAlign: 'center' }}>{Math.round(zoom * 100)}%</span>
+                      <button onClick={handleZoomIn} disabled={zoom >= 5} style={{ width: 34, height: 34, borderRadius: '50%', background: zoom >= 5 ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.2)', border: 'none', color: '#fff', fontSize: 20, cursor: zoom >= 5 ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>+</button>
+                      <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11, marginLeft: 4 }}>Scroll to zoom · Drag to pan</span>
+                    </div>
+
+                    {/* Image */}
+                    <div
+                      onMouseDown={handleMouseDown}
+                      onMouseMove={handleMouseMove}
+                      onMouseUp={handleMouseUp}
+                      onMouseLeave={handleMouseUp}
+                      style={{ cursor: zoom > 1 ? (dragging ? 'grabbing' : 'grab') : 'default', userSelect: 'none', maxWidth: '90vw', maxHeight: '85vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    >
+                      <img
+                        src="/assets/expressway-layout.webp"
+                        alt="Site Plan"
+                        draggable={false}
+                        style={{ transform: `scale(${zoom}) translate(${pos.x / zoom}px, ${pos.y / zoom}px)`, transformOrigin: 'center center', transition: dragging ? 'none' : 'transform 0.2s ease', maxWidth: '90vw', maxHeight: '85vh', display: 'block', objectFit: 'contain' }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </>
+            )
+          })()}
           
         </div>
       </section>
@@ -716,6 +801,25 @@ export default function ExpresswayResidencyPage() {
         </div>
       </section>
 
+
+      {/* ── GOOGLE MAP + ENQUIRY FORM ── */}
+      <section style={{ background: '#1a4a3a', padding: 'clamp(40px,5vw,64px) 16px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div className="map-grid">
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(245,158,11,0.3)', boxShadow: '0 4px 20px rgba(0,0,0,0.2)', flex: 1 }}>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.123456789!2d77.4850!3d28.7050!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf33ebb2a7351%3A0x4e08c11e7abf3002!2sExpressway%20Residency!5e0!3m2!1sen!2sin!4v1775802565878!5m2!1sen!2sin"
+                  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Location Map"
+                  style={{ width: '100%', height: '100%', minHeight: 480, border: 0, display: 'block' }} />
+              </div>
+            </div>
+            <div style={{ background: '#0d2f24', borderRadius: 12, padding: '28px', border: '1px solid rgba(245,158,11,0.2)' }}>
+              <EnquiryForm source="Map Section Form" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section style={{ position: 'relative', minHeight: 480 }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://i.postimg.cc/m2JQxV0K/Screenshot-2026-06-04-151930.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
@@ -730,31 +834,6 @@ export default function ExpresswayResidencyPage() {
         </div>
       </section>
 
-      {/* ── GOOGLE MAP + ENQUIRY FORM ── */}
-      <section style={{ background: '#1a4a3a', padding: 'clamp(40px,5vw,64px) 16px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div className="map-grid">
-            <div>
-              <h3 style={{ color: '#fff', fontSize: 18, fontWeight: 700, marginBottom: 16, fontFamily: "'Cormorant Garamond', Georgia, serif" }}>Google Map</h3>
-              <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(245,158,11,0.3)', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.123456789!2d77.4850!3d28.7050!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf33ebb2a7351%3A0x4e08c11e7abf3002!2sExpressway%20Residency!5e0!3m2!1sen!2sin!4v1775802565878!5m2!1sen!2sin"
-                  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Location Map"
-                  style={{ width: '100%', height: 300, border: 0, display: 'block' }} />
-              </div>
-              <div style={{ marginTop: 16, padding: '16px', background: 'rgba(255,255,255,0.06)', borderRadius: 8, border: '1px solid rgba(255,255,255,0.1)' }}>
-                <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12, lineHeight: 1.7 }}>Delhi - Meerut Expressway, near Hawa Hawai Restaurant,<br />Didwari, Ghaziabad, Uttar Pradesh 201206</p>
-                <a href="tel:+919911807193" style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#fbbf24', fontSize: 15, fontWeight: 700, textDecoration: 'none', marginTop: 10 }}>
-                  <IconPhone size={15} color="#fbbf24" /> +91-9911807193
-                </a>
-              </div>
-            </div>
-            <div style={{ background: '#0d2f24', borderRadius: 12, padding: '28px', border: '1px solid rgba(245,158,11,0.2)' }}>
-              <EnquiryForm source="Map Section Form" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       <footer style={{ background: '#fff', borderTop: '4px solid #1a4a3a' }}>
 
         {/* Main Grid */}
@@ -764,7 +843,7 @@ export default function ExpresswayResidencyPage() {
               <div style={{ marginBottom: 16 }}>
                 <img src="/assets/logo.webp" alt="Expressway Residency" style={{ height: 90, width: 'auto', display: 'block', objectFit: 'contain' }} />
               </div>
-              <p style={{ color: '#6b7280', fontSize: 13, lineHeight: 1.8, marginBottom: 20 }}>75 Acres USA + Dubai inspired premium township on NH-24, Ghaziabad. Delivering dream homes since 2011.</p>
+              <p style={{ color: '#6b7280', fontSize: 13, lineHeight: 1.8, marginBottom: 20 }}>75 Acres USA + Dubai inspired premium township on NE-3, Ghaziabad. Delivering dream homes since 2011.</p>
               <div style={{ display: 'flex', gap: 10 }}>
                 <a href="https://wa.me/919911807193" target="_blank" rel="noopener noreferrer" style={{ width: 38, height: 38, background: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', textDecoration: 'none' }}><IconWhatsApp size={18} /></a>
                 <a href="tel:+919911807193" style={{ width: 38, height: 38, background: '#1a4a3a', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}><IconPhone size={16} color="#fff" /></a>

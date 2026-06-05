@@ -3,7 +3,7 @@ import './globals.css'
 export const metadata = {
   title: 'Expressway Residency – Premium Plots on Delhi–Meerut Expressway | Haute World Developers',
   description:
-    'Premium residential plots (100–300 sq. yd.) at Expressway Residency on NH-24 Delhi–Meerut Expressway, Ghaziabad. 75 Acres USA + Dubai inspired township. Pre-Launch Price ₹75,000/Sq.Yd.',
+    'Premium residential plots (100–300 sq. yd.) at Expressway Residency on NE-3 Delhi–Meerut Expressway, Ghaziabad. 75 Acres USA + Dubai inspired township. Pre-Launch Price ₹75,000/Sq.Yd.',
 }
 
 export default function RootLayout({ children }) {
