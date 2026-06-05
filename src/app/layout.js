@@ -20,6 +20,14 @@ export default function RootLayout({ children }) {
           body { font-family: 'DM Sans', system-ui, sans-serif; }
           h1, h2, h3, h4, blockquote, em { font-family: 'Cormorant Garamond', Georgia, serif; }
         ` }} />
+        {/* Google Ads Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18216224281" />
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18216224281');
+        `}} />
       </head>
       <body>{children}</body>
     </html>
