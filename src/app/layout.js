@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-18216224281');
+            gtag('config', 'AW-18216224281', {
+              allow_enhanced_conversions: true,
+            });
           `}
         </Script>
       </head>
