@@ -236,7 +236,9 @@ export default function LeadModal({ isOpen, onClose, triggerText = '', inline = 
               Your data is safe with us.
             </p>
           </div>
-          <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+          <style>{`
+            @keyframes spin { to { transform: rotate(360deg); } }
+          `}</style>
         </form>
       )}
     </div>

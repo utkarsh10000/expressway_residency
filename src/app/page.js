@@ -28,6 +28,9 @@ const responsiveCSS = `
   .about-img { width: 85%; height: 260px; }
   .about-img-row2 { width: 85%; height: 260px; margin-left: 0; }
 
+  .mobile-only { display: none; }
+  .desktop-only { display: inherit; }
+
   @media (max-width: 900px) {
     .nav-links a { display: none; }
     .hero-grid { flex-direction: column; }
@@ -36,13 +39,212 @@ const responsiveCSS = `
     .about-row2-img { order: -1; }
     .proximity-cols { columns: 1; }
     .faq-overlay { background: rgba(10,25,18,0.88); }
+
+    .mobile-only { display: block; }
+    .desktop-only { display: none !important; }
+
+    /* Global left/right breathing room on mobile */
+    .section-pad { padding-left: 28px !important; padding-right: 28px !important; }
+
+    /* Hero mobile: center everything */
+    .hero-copy { text-align: center; align-items: center; }
+    .hero-eyebrow { text-align: center; }
+    .hero-title-wrap { text-align: center; }
+    .hero-desc-1 {
+      font-size: 15px !important;
+      color: #ffffff !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.9);
+      font-weight: 500 !important;
+      text-align: center;
+    }
+    .hero-desc-2 {
+      font-size: 13.5px !important;
+      color: #fde68a !important;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+      font-weight: 600 !important;
+      text-align: center;
+    }
+    .hero-price-heading {
+      text-align: center;
+      color: #fbbf24;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 18px 0 14px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    .hero-feature-table {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(245,158,11,0.5);
+      border: 1px solid #f59e0b;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    .hero-feature-cell {
+      background: linear-gradient(160deg, #163f31 0%, #0d2f24 100%);
+      backdrop-filter: blur(4px);
+      padding: 14px 12px;
+      color: #f5f2ea;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      line-height: 1.4;
+      text-align: left;
+    }
+    .hero-btns { justify-content: center; }
+    .hero-btns button, .hero-btns a {
+      width: auto !important;
+      flex: 0 1 auto !important;
+      padding: 12px 18px !important;
+      font-size: 13px !important;
+    }
+
+    /* About section mobile sizing */
+    .about-eyebrow { font-size: 13px !important; }
+    .about-section-heading { font-size: 30px !important; line-height: 1.25 !important; }
+    .about-heading { font-size: 26px !important; line-height: 1.3 !important; }
+    .about-title { font-size: 23px !important; line-height: 1.4 !important; }
+    .about-para { font-size: 15.5px !important; line-height: 1.85 !important; }
+    .amenities-section-heading { font-size: 38px !important; line-height: 1.2 !important; }
+
+    /* Green pricing banner mobile */
+    .price-banner-highlight {
+      display: inline-block;
+      background: rgba(245,158,11,0.15);
+      border: 1.5px solid #fbbf24;
+      border-radius: 10px;
+      padding: 10px 18px;
+      margin-top: 8px;
+      font-size: 22px !important;
+      color: #fff !important;
+    }
+
+    /* Enquiry form mobile price heading */
+    .form-price-heading {
+      display: block;
+      text-align: center;
+      color: #fbbf24;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 0.3px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed rgba(245,158,11,0.4);
+    }
+
+    /* Pricing cards redesign - mobile only */
+    .price-card-mobile {
+      position: relative;
+      width: 100% !important;
+      max-width: 340px;
+      border-radius: 18px !important;
+      background: linear-gradient(160deg, #123d30 0%, #0d2f24 60%, #0a241c 100%) !important;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+      border: 1px solid rgba(245,158,11,0.25);
+      overflow: visible !important;
+    }
+    .price-card-mobile .price-card-header,
+    .price-card-mobile .price-card-band,
+    .price-card-mobile .price-card-cut {
+      display: none !important;
+    }
+    .price-card-mobile .price-card-body {
+      background: transparent !important;
+      padding: 34px 22px 26px !important;
+    }
+    .price-card-mobile .price-card-body p {
+      color: #f5f2ea !important;
+    }
+    .price-card-mobile .price-card-body p:nth-of-type(1),
+    .price-card-mobile .price-card-body p:nth-of-type(3) {
+      color: #fbbf24 !important;
+      opacity: 0.95 !important;
+    }
+    .price-card-mobile .price-card-body p:nth-of-type(2) {
+      color: #ffffff !important;
+      font-size: 26px !important;
+    }
+    .price-card-mobile .price-card-body p:nth-of-type(4) {
+      color: #fff !important;
+      font-size: 19px !important;
+    }
+    .price-card-ribbon {
+      position: absolute;
+      top: -12px;
+      left: 22px;
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(245,158,11,0.45);
+    }
+    .price-card-onrequest {
+      display: inline-block;
+      color: #fbbf24;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 18px;
+    }
+
+    /* Amenities redesign - round cards, 3 per row, mobile only */
+    .amenities-flex-mobile {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 14px !important;
+      justify-content: center;
+    }
+    .amenity-card-mobile {
+      width: 100% !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      aspect-ratio: unset !important;
+      border-radius: 0 !important;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px !important;
+      padding: 4px 2px !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .amenity-card-mobile svg {
+      width: 56px !important;
+      height: 56px !important;
+      box-sizing: border-box !important;
+      padding: 13px !important;
+      background: #f8f4ed !important;
+      border: 2px solid #e5e7eb !important;
+      border-radius: 50% !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .amenity-card-mobile p {
+      font-size: 10.5px !important;
+      line-height: 1.3 !important;
+      color: #374151 !important;
+      margin: 0 !important;
+    }
   }
 
   @media (max-width: 640px) {
     .nav-links .apply-btn { display: none; }
     .nav-height { height: 56px; }
-    .hero-btns button, .hero-btns a { width: 100%; justify-content: center; }
-    .hero-btns { flex-direction: column; }
     .footer-cta { flex-direction: column; align-items: flex-start; }
     .footer-cta-btns { flex-direction: column; width: 100%; }
     .footer-cta-btns a, .footer-cta-btns button { width: 100%; text-align: center; justify-content: center; }
@@ -53,6 +255,7 @@ const responsiveCSS = `
 
   @media (max-width: 480px) {
     .nav-links .call-btn span { display: none; }
+    .hero-feature-table { grid-template-columns: 1fr 1fr; }
   }
 
   .proximity-mobile { display: none; }
@@ -197,6 +400,15 @@ const advantages = [
   'Strong appreciation and growth potential',
   'Superior connectivity to Delhi & NCR',
   'USA + Dubai inspired premium township design',
+]
+
+const heroFeatureRows = [
+  '8+ Theme Parks',
+  'Olympic Size Swimming Pool',
+  'Ultra Luxury Clubhouse',
+  'Mini Hospital',
+  'Artificial Lake',
+  'AI Enabled Security',
 ]
 
 /* ── Navbar ── */
@@ -455,7 +667,7 @@ export default function ExpresswayResidencyPage() {
 
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", color: '#1e2a22', background: '#fff', overflowX: 'hidden' }}>
-      <style>{responsiveCSS}</style>
+      <style dangerouslySetInnerHTML={{ __html: responsiveCSS }} />
       <Navbar onCTAClick={openModal} />
       <LeadModal isOpen={modalOpen} onClose={() => setModalOpen(false)} triggerText={modalTitle} />
 
@@ -463,17 +675,26 @@ export default function ExpresswayResidencyPage() {
       <section id="overview" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 140 }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://i.postimg.cc/bwn1qkPh/Screenshot-2026-06-04-151727.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.3) 100%)' }} />
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 16px', position: 'relative', zIndex: 10, width: '100%' }}>
+        <div className="section-pad" style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 16px', position: 'relative', zIndex: 10, width: '100%' }}>
           <div className="hero-grid">
-            <div style={{ maxWidth: 580, flex: '1 1 auto' }}>
-              <p style={{ color: '#fbbf24', fontSize: 11, letterSpacing: 3, fontWeight: 700, textTransform: 'uppercase', marginBottom: 12 }}>Premium Residential Township on NE-3</p>
-              <h1 style={{ color: '#fff', fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(2.2rem,5vw,4.2rem)', fontWeight: 700, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 16 }}>
+            <div className="hero-copy" style={{ maxWidth: 580, flex: '1 1 auto' }}>
+              <p className="hero-eyebrow" style={{ color: '#fbbf24', fontSize: 11, letterSpacing: 3, fontWeight: 700, textTransform: 'uppercase', marginBottom: 12 }}>Premium Residential Township on NE-3</p>
+              <h1 className="hero-title-wrap" style={{ color: '#fff', fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(2.2rem,5vw,4.2rem)', fontWeight: 700, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 16 }}>
                 <span style={{ whiteSpace: 'nowrap' }}>Expressway <em style={{ color: '#fbbf24', fontStyle: 'italic' }}>Residency</em></span>
               </h1>
-              <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: 'clamp(13px,1.5vw,15px)', lineHeight: 1.7, marginBottom: 8 }}>
+              <p className="hero-desc-1" style={{ color: 'rgba(255,255,255,0.78)', fontSize: 'clamp(13px,1.5vw,15px)', lineHeight: 1.7, marginBottom: 8 }}>
                 75 Acres USA + Dubai inspired premium living mega township on the 16-lane Delhi–Meerut Expressway (NE-3), Ghaziabad.
               </p>
-              <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, marginBottom: 28 }}>Ready-to-Move · Residential Plots (100–300 Sq. Yd.) · Starting ₹75,000/Sq. Yd.</p>
+              <p className="hero-desc-2 desktop-only" style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, marginBottom: 28 }}>Ready-to-Move · Residential Plots (100–300 Sq. Yd.) · Starting ₹75,000/Sq. Yd.</p>
+
+              {/* Mobile-only: price heading + feature table */}
+              <h3 className="hero-price-heading mobile-only">Starting at ₹75,000/Sq.Yd.</h3>
+              <div className="hero-feature-table mobile-only">
+                {heroFeatureRows.map(item => (
+                  <div key={item} className="hero-feature-cell">{item}</div>
+                ))}
+              </div>
+
               <div className="hero-btns" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <button onClick={() => openModal('Book a Free Site Visit')} style={{ background: 'linear-gradient(135deg, #f59e0b, #f97316)', color: '#fff', border: 'none', borderRadius: 8, padding: '14px 24px', fontWeight: 700, fontSize: 14, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8 }}>Book a Free Site Visit →</button>
                 <button onClick={() => openModal('Get Pricing & Payment Plan')} style={{ background: 'transparent', color: '#f59e0b', border: '2px solid #f59e0b', borderRadius: 8, padding: '14px 24px', fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>Get Pricing Details</button>
@@ -487,10 +708,10 @@ export default function ExpresswayResidencyPage() {
       </section>
 
       {/* ── ABOUT THE PROJECT ── */}
-      <section style={{ background: '#fff', padding: 'clamp(40px,5vw,64px) 16px' }}>
+      <section className="section-pad" style={{ background: '#fff', padding: 'clamp(40px,5vw,64px) 16px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 12 }}>About the Project</h2>
+            <h2 className="about-section-heading" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 12 }}>About the Project</h2>
             <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg,#1a4a3a,#f59e0b)', borderRadius: 2, margin: '0 auto 24px' }} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
@@ -498,9 +719,9 @@ export default function ExpresswayResidencyPage() {
             {/* Row 1 */}
             <div className="about-grid">
               <div>
-                <p style={{ fontSize: 11, fontWeight: 800, letterSpacing: 3, textTransform: 'uppercase', color: '#1a4a3a', marginBottom: 8 }}>ABOUT THE <span style={{ color: '#374151' }}>PROJECT</span></p>
-                <h3 style={{ fontSize: 'clamp(15px,2vw,18px)', fontWeight: 700, color: '#1e2a22', marginBottom: 12 }}>Expressway Residency — Exclusive Villa Society in Ghaziabad</h3>
-                <p style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.8, marginBottom: 16 }}>
+                <p className="about-eyebrow" style={{ fontSize: 11, fontWeight: 800, letterSpacing: 3, textTransform: 'uppercase', color: '#1a4a3a', marginBottom: 8 }}>ABOUT THE <span style={{ color: '#374151' }}>PROJECT</span></p>
+                <h3 className="about-title" style={{ fontSize: 'clamp(15px,2vw,18px)', fontWeight: 700, color: '#1e2a22', marginBottom: 12 }}>Expressway Residency — Exclusive Villa Society in Ghaziabad</h3>
+                <p className="about-para" style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.8, marginBottom: 16 }}>
                   Experience a perfect blend of comfort, connectivity, and contemporary lifestyle at Expressway Residency, ideally located on the rapidly developing NE-3 Delhi–Meerut Expressway, Ghaziabad. Designed for modern families, this residential enclave offers a serene living environment with seamless access to major urban hubs. Just 1 hour from Delhi NCR, this thoughtfully planned township blends urban comfort with green living.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -525,8 +746,8 @@ export default function ExpresswayResidencyPage() {
                 <img src="https://i.postimg.cc/MpB1zVSN/Screenshot-2026-06-04-151838.webp" alt="Expressway Residency Plots" style={{ width: '85%', height: 260, objectFit: 'cover', display: 'block', position: 'relative', zIndex: 1, boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }} />
               </div>
               <div>
-                <h3 style={{ fontSize: 'clamp(15px,2vw,18px)', fontWeight: 700, color: '#1e2a22', marginBottom: 12 }}>Expressway Residency Plots — Exclusive Residential Plots in Ghaziabad</h3>
-                <p style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.8, marginBottom: 16 }}>
+                <h3 className="about-title" style={{ fontSize: 'clamp(15px,2vw,18px)', fontWeight: 700, color: '#1e2a22', marginBottom: 12 }}>Expressway Residency Plots — Exclusive Residential Plots in Ghaziabad</h3>
+                <p className="about-para" style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.8, marginBottom: 16 }}>
                   At Expressway Residency you can own your dream property with premium residential plots available in sizes of 100, 150, 200 and 300 Sq. Yd., starting at ₹75,000 per Sq. Yd. Surrounded by villas and lush greenery, these plots offer wide road access and access to premium lifestyle amenities.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -545,18 +766,23 @@ export default function ExpresswayResidencyPage() {
 
       {/* ── PRICING BANNER ── */}
       <div style={{ background: '#1a4a3a', borderTop: '3px solid #f59e0b', borderBottom: '3px solid #f59e0b' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px', textAlign: 'center' }}>
-          <p style={{ color: '#fff', fontSize: 'clamp(16px,3vw,28px)', fontWeight: 800, letterSpacing: 0.5 }}>
+        <div className="section-pad" style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px', textAlign: 'center' }}>
+          <p className="desktop-only" style={{ color: '#fff', fontSize: 'clamp(16px,3vw,28px)', fontWeight: 800, letterSpacing: 0.5 }}>
             India's First <span style={{ color: '#fbbf24', fontSize: 'clamp(18px,3.2vw,30px)' }}>AI Enabled Township</span> on Delhi–Meerut Expressway
             <br />
-            <span style={{ fontSize: 'clamp(16px,3vw,28px)', fontWeight: 800, color: '#fff' }}>Plots at <span style={{ color: '#fbbf24' }}>₹75,000 / Per Sq. Yard</span> Onwards</span>
+            <span style={{ fontSize: 'clamp(16px,3vw,28px)', fontWeight: 800, color: '#fff' }}>Plots at <span style={{ color: '#fbbf24' }}>Starting at ₹75,000/Sq.Yd.</span> Onwards</span>
+          </p>
+          <p className="mobile-only" style={{ color: '#fff', fontSize: 17, fontWeight: 800, letterSpacing: 0.5 }}>
+            India's First <span style={{ color: '#fbbf24' }}>AI Enabled Township</span> on Delhi–Meerut Expressway
+            <br />
+            <span className="price-banner-highlight">Starting at ₹75,000/Sq.Yd.</span>
           </p>
         </div>
       </div>
 
 
       {/* ── LOCATION ── */}
-      <section id="location" style={{ background: '#fff', padding: 'clamp(40px,5vw,64px) 16px' }}>
+      <section id="location" className="section-pad" style={{ background: '#fff', padding: 'clamp(40px,5vw,64px) 16px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 6 }}>Expressway Residency</h2>
@@ -603,7 +829,7 @@ export default function ExpresswayResidencyPage() {
       </section>
 
       {/* ── TOWNSHIP SPECS ── */}
-      <section style={{ background: '#f8f4ed', padding: 'clamp(40px,5vw,64px) 16px' }}>
+      <section className="section-pad" style={{ background: '#f8f4ed', padding: 'clamp(40px,5vw,64px) 16px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 12 }}>Township Specifications</h2>
@@ -623,7 +849,7 @@ export default function ExpresswayResidencyPage() {
       </section>
 
       {/* ── PRICING ── */}
-      <section id="pricing" style={{ background: '#0d1f18', padding: 'clamp(40px,5vw,72px) 16px' }}>
+      <section id="pricing" className="section-pad" style={{ background: '#0d1f18', padding: 'clamp(40px,5vw,72px) 16px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
             <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 16, fontStyle: 'italic', color: '#f59e0b', marginBottom: 12 }}>Price List</p>
@@ -636,19 +862,21 @@ export default function ExpresswayResidencyPage() {
               { size: '200 Sq.Yd.', type: 'Residencial Plots ' },
               { size: '300 Sq.Yd.', type: 'Residencial Plots ' },
             ].map(({ size, type }) => (
-              <div key={size} style={{ width: 300, borderRadius: 20, overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.35)', flexShrink: 0 }}>
+              <div key={size} className="price-card-mobile" style={{ width: 300, borderRadius: 20, overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.35)', flexShrink: 0 }}>
+                <span className="price-card-ribbon mobile-only">Pre-Launch Offer</span>
                 {/* Top grey header */}
-                <div style={{ background: '#e5e5e0', padding: '18px 24px', textAlign: 'center' }}>
+                <div className="price-card-header" style={{ background: '#e5e5e0', padding: '18px 24px', textAlign: 'center' }}>
                   <p style={{ fontSize: 11, fontWeight: 800, letterSpacing: 3, color: '#1a4a3a', textTransform: 'uppercase', margin: 0 }}>Plots</p>
                 </div>
                 {/* White price band with diagonal cut effect */}
-                <div style={{ background: '#fff', padding: '20px 24px 40px', position: 'relative' }}>
+                <div className="price-card-band" style={{ background: '#fff', padding: '20px 24px 40px', position: 'relative' }}>
                   <p style={{ fontSize: 15, color: '#1e2a22', fontWeight: 500, margin: 0 }}>₹ On Request</p>
                   {/* Diagonal overlay */}
-                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 40, background: '#f0ece3', clipPath: 'polygon(0 100%, 100% 0, 100% 100%)' }} />
+                  <div className="price-card-cut" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 40, background: '#f0ece3', clipPath: 'polygon(0 100%, 100% 0, 100% 100%)' }} />
                 </div>
                 {/* Cream bottom card */}
-                <div style={{ background: '#f0ece3', padding: '28px 24px 28px' }}>
+                <div className="price-card-body" style={{ background: '#f0ece3', padding: '28px 24px 28px' }}>
+                  <span className="price-card-onrequest mobile-only">₹ Price On Request</span>
                   <div style={{ marginBottom: 20 }}>
                     <p style={{ fontSize: 10, fontWeight: 800, letterSpacing: 2, color: '#1a4a3a', textTransform: 'uppercase', marginBottom: 4 }}>Residential Plots</p>
                     <p style={{ fontSize: 22, fontWeight: 800, color: '#1e2a22', margin: 0 }}>{size}</p>
@@ -672,7 +900,7 @@ export default function ExpresswayResidencyPage() {
         </div>
       </section>
 
-      {/* ── SITE LAYOUT ── */}      <section id="siteplan" style={{ background: '#fff', padding: 'clamp(40px,5vw,64px) 16px' }}>
+      {/* ── SITE LAYOUT ── */}      <section id="siteplan" className="section-pad" style={{ background: '#fff', padding: 'clamp(40px,5vw,64px) 16px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 12 }}>Site Layout</h2>
@@ -747,16 +975,16 @@ export default function ExpresswayResidencyPage() {
       </section>
 
       {/* ── ALL AMENITIES ── */}
-      <section style={{ background: '#fff', padding: 'clamp(40px,5vw,64px) 16px' }}>
+      <section className="section-pad" style={{ background: '#fff', padding: 'clamp(40px,5vw,64px) 16px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 6 }}>50+ Modern Amenities</h2>
+            <h2 className="amenities-section-heading" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 6 }}>50+ Modern Amenities</h2>
             <p style={{ fontSize: 13, color: '#6b7280', marginBottom: 12 }}>Premium lifestyle amenities for every member of the family</p>
             <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg,#1a4a3a,#f59e0b)', borderRadius: 2, margin: '0 auto' }} />
           </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 20 }}>
+          <div className="amenities-flex-mobile" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 20 }}>
             {amenities.map(({ Icon, label }) => (
-              <div key={label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14, padding: '28px 12px', background: '#f8f4ed', borderRadius: 12, border: '1px solid #e5e7eb', textAlign: 'center', minHeight: 140, width: 'calc((100% - 100px) / 6)', minWidth: 120, boxSizing: 'border-box' }}>
+              <div key={label} className="amenity-card-mobile" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14, padding: '28px 12px', background: '#f8f4ed', borderRadius: 12, border: '1px solid #e5e7eb', textAlign: 'center', minHeight: 140, width: 'calc((100% - 100px) / 6)', minWidth: 120, boxSizing: 'border-box' }}>
                 <Icon size={44} color="#1a4a3a" />
                 <p style={{ fontSize: 13, fontWeight: 600, color: '#374151', lineHeight: 1.4, margin: 0 }}>{label}</p>
               </div>
@@ -812,7 +1040,7 @@ export default function ExpresswayResidencyPage() {
 
 
       {/* ── GOOGLE MAP + ENQUIRY FORM ── */}
-      <section style={{ background: '#1a4a3a', padding: 'clamp(40px,5vw,64px) 16px' }}>
+      <section className="section-pad" style={{ background: '#1a4a3a', padding: 'clamp(40px,5vw,64px) 16px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div className="map-grid">
             <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -833,7 +1061,7 @@ export default function ExpresswayResidencyPage() {
       <section style={{ position: 'relative', minHeight: 480 }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://i.postimg.cc/m2JQxV0K/Screenshot-2026-06-04-151930.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div className="faq-overlay" style={{ position: 'absolute', inset: 0 }} />
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: 1200, margin: '0 auto', padding: 'clamp(40px,5vw,72px) 16px' }}>
+        <div className="section-pad" style={{ position: 'relative', zIndex: 10, maxWidth: 1200, margin: '0 auto', padding: 'clamp(40px,5vw,72px) 16px' }}>
           <h2 style={{ fontSize: 'clamp(2rem,5vw,3.8rem)', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em', marginBottom: 32 }}>FAQ</h2>
           <div style={{ maxWidth: 520, background: '#fff', border: '1px solid #e5e7eb', overflow: 'hidden' }}>
             {faqs.map((faq, i) => (
@@ -846,7 +1074,7 @@ export default function ExpresswayResidencyPage() {
       <footer style={{ background: '#fff', borderTop: '4px solid #1a4a3a' }}>
 
         {/* Main Grid */}
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(32px,4vw,52px) 16px 32px' }}>
+        <div className="section-pad" style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(32px,4vw,52px) 16px 32px' }}>
           <div className="footer-grid">
             <div>
               <div style={{ marginBottom: 16 }}>
