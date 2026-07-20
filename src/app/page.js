@@ -786,7 +786,6 @@ export default function ExpresswayResidencyPage() {
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 'clamp(1.6rem,3vw,2.6rem)', color: '#1e2a22', fontWeight: 700, marginBottom: 6 }}>Expressway Residency</h2>
-            <p style={{ fontSize: 13, color: '#6b7280' }}>Location: 300m from Honda North Gate, Ghaziabad</p>
             <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg,#1a4a3a,#f59e0b)', borderRadius: 2, margin: '16px auto 0' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 40, alignItems: 'start' }}>
